@@ -1,0 +1,45 @@
+Selenium suanakadar 4 tool cıkardı, Selenium RC, Selenium Webdriver,Selenium IDE,
+Selenium Grid. Selenium WebDriver-->Selenium2,Selenium3,Selenium4..
+ Selenium neden cok tercih ediliyor? En büyük sebebi ucretsiz olması,
+ ikincisi coğu platformlarda calısabilmesi.farklı Dillerdeki browserlari destekleyebilmesi
+mobile testi destekler
+Agile ve Continuous Delivery ile entegre
+Kullanici sayisi fazla
+Genix plugin ve extention kütüphaneleri mevcut
+Dezavantajları
+Bir kod bilgisi gerektirir
+Sadece web tabanlı uygulamalarda kullanılır. (mobile test için appium kullaniliyor)
+Görüntü karsılastırma yok
+Teknik destek yok
+Raporlama özelliği yok
+Grafik, captchas, barkod ve sekiller ile kullanılamaz.
+Selenium grid=uzaktaki bilgisayarlarda tanımlanmıs farklı browserlar üzerinden test yapmamızı sağlıyor.
+ Selenium IDE:Browser eklentisi,
+bunu ekleyince yaptığımız test islemlerini kaydediyor.  bunu görmeyeceğiz. SeleniumWebDriver SUAN kullandığımız,
+
+
+
+
+bir web sitesine girdigimizde karsımıza bir uyarı mesajı yada bir buttona tıkladığımızda bir uyarı cıkabilir
+eğer bu uyarıya incele(mause sağ-tik inspect) yapabiliyorsak bu tür alert lere html alert denir.
+ve istedigimiz locate'i alabiliriz. Ama gelen uyarı kutusuna müdahale (sağ tik inspect ile) edemiyorsak
+bu tür alertlere  js alert denir.
+js alert'lere müdahale edebilmek icin
+-- tamam ya da ok icin
+driver.switchTo().alert().accept();swichTo--> değiştir demek yada geciş yap  accept-->ok dememize izin verir
+--iptal icin
+driver.switchTo().alert().dismiss();dismiss-->iptal etmemize izin verir
+--alert icindeki mesajı almak icin
+driver.switchTo().alert().getText();  getText içindeki mesajı almamıza izin verir
+--alert bizden bir metin istiyorsa
+driver.switchTo().alert().sendKeys("");  sendKeys -->metin istiyorsa
+methodları kullanilir!!
+
+Iframenedir?
+➢IFrame,bir web sayfasına icine yerlestirilmis baska bir web sayfasıdır veya bir HTML dokumaninn
+ içine yerleştirilmiş baska bir HTML dokumanidir.
+➢IFrame genelliklebirWebsayfasınadokuman,videoveyainteraktifmediagibibaşkabirkaynaktan
+içerikeklemekiçinkullanılır.<iframe>tag’ıbirinlineframebelirtir.
+https://html.com/tags/iframe/
+
+allerts -->uyarı demek

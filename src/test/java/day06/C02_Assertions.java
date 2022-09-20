@@ -21,7 +21,7 @@ public class C02_Assertions {
      */
     static WebDriver driver;
 
-    @Before
+    @BeforeClass
     public void setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -29,7 +29,7 @@ public class C02_Assertions {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://www.bestbuy.com/");
     }
-    @After
+    @AfterClass
     public static void tearDown(){
        //driver.close();
     }
@@ -41,7 +41,7 @@ public class C02_Assertions {
         Assert.assertEquals(expectedUrl,actualUrl);
     }
     @Test
-    public static void Test2(){
+    public void Test2(){
         //○ titleTest => Sayfa başlığının “Rest” içermediğini(contains) test edin
         String expectedTitle = "Rest";
         String actualTitle = driver.getTitle();
@@ -50,14 +50,16 @@ public class C02_Assertions {
     }
 
     @Test
-    public static void Test3(){
+    public  void Test3(){
         //○ logoTest => BestBuy logosunun görüntülendigini test edin
-        Assert.assertTrue(driver.findElement(By.xpath("(//*[@class='logo'])[1]")).isDisplayed());
+        WebElement logoElementi = driver.findElement(By.xpath("(//*[@class='logo'])[1]"));
+        Assert.assertTrue(logoElementi.isDisplayed());
     }
     @Test
     public void test4() {
         //○ FrancaisLinkTest => Fransizca Linkin görüntülendiğini test edin
-        Assert.assertTrue(driver.findElement(By.xpath("//*[text()='Français']")).isDisplayed());
+        WebElement francaisElementi = driver.findElement(By.xpath("//*[text()='Français']"));
+        Assert.assertTrue(francaisElementi.isDisplayed());
     }
 
 }

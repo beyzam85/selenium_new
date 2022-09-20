@@ -16,6 +16,7 @@ public class C03_BeforeClassAfterClass {
     //yani publuc static void olmalı
 
     static WebDriver driver;
+
     @BeforeClass
     public static void setUp(){
         WebDriverManager.chromedriver().setup();

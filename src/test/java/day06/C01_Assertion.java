@@ -21,7 +21,7 @@ public class C01_Assertion {
     d-Url nin www.facebook.com oldugunu test edin.
     */
 
-//BİLGİ:  assertTrue
+//BİLGİ:  assertTrue / onaylamak
 //beklenen bir sonucun true olduğunun kabul edilmesi gerektiği zaman kullanılır.
 // Parametre olarak iki değer alır.
 // İlk parametre de bir mesaj gönderilir ikinci parametrede ise gönderilen mesajın doğruluğu için koşul belirlenir.
@@ -53,10 +53,10 @@ public class C01_Assertion {
     @Test
     public void test1(){
         //a-Url'nin facebook içerdiğini test edelim
-        String expectedUrl = "facebook";
+        String expectedUrl = "amazon";
         String actualUrl = driver.getCurrentUrl();
-        Assert.assertFalse(actualUrl.contains(expectedUrl));
-        //Assert.assertNotEquals(expectedUrl,actualUrl);
+        Assert.assertTrue(actualUrl.contains(expectedUrl));
+        //Assert.assertEquals(expectedUrl,actualUrl);
     }
     @Test
     public void test2(){
@@ -68,8 +68,8 @@ public class C01_Assertion {
     @Test
     public void test3(){
         //c- sol üst köşede amazon logosunun göründüğünü test edelim
-        WebElement logo = driver.findElement(By.id("nav-logo-sprites"));
-        Assert.assertTrue(logo.isDisplayed());
+        WebElement logoelementi = driver.findElement(By.id("nav-logo-sprites"));
+        Assert.assertTrue(logoelementi.isDisplayed());
     }
     @Test
     public void test4(){

@@ -36,11 +36,14 @@ public class Odev02_RadioButton {
     }
     @Test
     public void test1() throws InterruptedException {
+
         //    https://www.facebook.com adresine gidin
         driver.get("https://www.facebook.com");
+
         //    Cookies’i kabul edin
         //    “Create an Account” button’una basin
         driver.findElement(By.xpath("(//*[@role='button'])[2]")).click();
+
         //    “radio buttons” elementlerini locate edin
         WebElement femaleButton = driver.findElement(By.xpath("//input[@value='1']"));
         WebElement maleButton = driver.findElement(By.xpath("//input[@value='2']"));

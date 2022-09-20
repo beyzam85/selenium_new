@@ -40,11 +40,12 @@ public class C04_JunitCheckBox {
         driver.get("https://the-internet.herokuapp.com/checkboxes");
         //      b. Checkbox1 ve checkbox2 elementlerini locate edin.
 
-        WebElement checkbox1 = driver.findElement(By.xpath("(//*[@type='checkbox'])[1]"));
+        WebElement checkbox1 = driver.findElement(By.xpath("(//*[@type='checkbox'])[1]"));//kontrol kutusu / locate etmewk
         WebElement checkbox2 = driver.findElement(By.xpath("(//*[@type='checkbox'])[2]"));
+
         //      c. Checkbox1 seçili değilse onay kutusunu tıklayın
         Thread.sleep(2000);
-        if (!checkbox1.isSelected()) {
+        if (!checkbox1.isSelected()) { //select ssec demek ! degilse
             checkbox1.click();
 
         }
