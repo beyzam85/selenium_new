@@ -11,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AllertsTekrar02 {
      /*
@@ -81,8 +83,12 @@ tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
         String actualMesaj = driver.findElement(By.xpath("//*[@id='result']")).getText();
         String expectudMesaj = "beyza omac";
         Assert.assertTrue(actualMesaj.contains(expectudMesaj));
+        List<String> windowList= new ArrayList<String>(driver.getWindowHandles());
+                driver.switchTo().window(windowList.get(0));
+
+        Assert.assertEquals("Elemental Selenium",driver.findElement(By.xpath("//*[text()='Elemental Selenium']")).getText());
+
+
     }
-
-
 
 }

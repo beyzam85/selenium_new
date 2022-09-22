@@ -1,4 +1,4 @@
-package First_Practice;
+package day001_practice;
 
 import org.junit.*;
 

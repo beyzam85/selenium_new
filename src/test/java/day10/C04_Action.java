@@ -15,9 +15,10 @@ public  class C04_Action extends TestBaseBeforeAfter {
 
       /*
 1-Yeni bir class olusturalim: MouseActions1
-2-https://the-internet.herokuapp.com/context_menu sitesine gidelim  3- Cizili alan uzerinde sag click yapalim
-3-Alert'te cikan yazinin "You selected a context menu" oldugunu
-4-test edelim.
+2-https://the-internet.herokuapp.com/context_menu sitesine gidelim
+3- Cizili alan uzerinde sag click yapalim
+4-Alert'te cikan yazinin "You selected a context menu" oldugunu
+  -test edelim.
 5-Tamam diyerek alert'i kapatalim
 6-Elemental Selenium linkine tiklayalim
 7-Acilan sayfada h1 taginda "Elemental Selenium" yazdigini test edelim
@@ -48,7 +49,7 @@ public  class C04_Action extends TestBaseBeforeAfter {
         List<String> windowList = new ArrayList<String>(driver.getWindowHandles()); // bu konuya egilmek lazım
         driver.switchTo().window(windowList.get(0));
 
-//Acilan sayfada h1 taginda "Elemental Selenium" yazdigini test edelim
+        //Acilan sayfada h1 taginda "Elemental Selenium" yazdigini test edelim
         Assert.assertEquals("Elemental Selenium", driver.findElement(By.xpath("//*[text()='Elemental Selenium']")).getText());
 
 

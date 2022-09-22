@@ -20,7 +20,7 @@ public class C03_Action extends TestBaseBeforeAfter {
         actions.moveToElement(accountList).perform();//mouse accountList uzerine gidip bekle
         Thread.sleep(2000);
 
-        //-->actions.perform();//imleci gidip account un uzerine gitmesi ve ebeklemesi
+        //-->actions.perform();//imleci gidip account un uzerine gitmesi ve beklemesi
         //-->actions.moveToElement();//mouse ..üzerine gidip bekle
         //-->actions.dragAndDrop();//eleemnti surukle ve birak
         //-->actions.contextClick();//sagtus
