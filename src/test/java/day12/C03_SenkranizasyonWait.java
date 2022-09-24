@@ -29,7 +29,7 @@ public class C03_SenkranizasyonWait extends TestBaseBeforeAfter {
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id='message']")).isDisplayed());
     }
     @Test
-    public void explicitWaitTest2() {
+    public void explicitWaitTest2() throws InterruptedException {
         //https://the-internet.herokuapp.com/dynamic_controls adresine gidin.
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
 
@@ -56,5 +56,7 @@ public class C03_SenkranizasyonWait extends TestBaseBeforeAfter {
         WebElement itsBackWE = wait.until(ExpectedConditions.
                 visibilityOfElementLocated(By.xpath("//*[@id='message']")));
         Assert.assertTrue(itsBackWE.isDisplayed());
+
+
     }
 }
