@@ -48,6 +48,7 @@ public class Odev02_RadioButton {
         WebElement femaleButton = driver.findElement(By.xpath("//input[@value='1']"));
         WebElement maleButton = driver.findElement(By.xpath("//input[@value='2']"));
         WebElement customButton = driver.findElement(By.xpath("//input[@value='-1']"));
+
         //    Secili degilse cinsiyet butonundan size uygun olani secin
         if (!maleButton.isSelected()){
             maleButton.click();

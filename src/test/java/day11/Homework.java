@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import utilities.TestBaseBeforeAfter;
 
 public class Homework extends TestBaseBeforeAfter {
@@ -27,6 +28,7 @@ public class Homework extends TestBaseBeforeAfter {
 
         //2- Hover over Me First" kutusunun ustune gelin
         WebElement hoverOver = driver.findElement(By.xpath("(//*[@class='dropbtn'])[1]"));
+        Actions actions =new Actions(driver);
        actions.moveToElement(hoverOver). //mausu üzerine getir
                sendKeys(Keys.ARROW_DOWN).//klavyede asagıtusla ilerle
                click(hoverOver).//clik yap

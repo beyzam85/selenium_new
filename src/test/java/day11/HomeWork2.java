@@ -21,6 +21,7 @@ public class HomeWork2 extends TestBaseBeforeAfter {
         driver.get("https://html.com/tags/iframe/");
 
         //2-) video'yu gorecek kadar asagi inin
+        Actions actions =new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN).
                 sendKeys(Keys.PAGE_DOWN).perform();
 

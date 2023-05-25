@@ -11,6 +11,7 @@ import utilities.TestBaseBeforeAfter;
 import java.time.Duration;
 
 public class HomeWork01Explicitlyle extends TestBaseBeforeAfter {
+    Actions actions = new Actions(driver);
 
     @Test
     public void test1() {

@@ -25,10 +25,10 @@ public class C04_ReadExcel {
         int sonsatir = workbook.getSheet("Sayfa1").getLastRowNum();
         //getLastRowNum() methodu excel sayfasındaki tüm satir numarasını verir
 
-        System.out.println("Satir sayisi :"+ sonsatir);
+        System.out.println("Satir sayisi :" + sonsatir);
         String turkceBaskentler = "";
-        for (int i = 0; i <= sonsatir; i++) {
-            turkceBaskentler = workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString();
+        for (int i = 0; i <= sonsatir ; i++) {
+            turkceBaskentler= workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString(); //herbir hucreyi soud un içinde yazdırdık.
             System.out.println(turkceBaskentler);
 
         }

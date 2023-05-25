@@ -15,7 +15,7 @@ public class C05_Actions extends TestBaseBeforeAfter {
         //"Drag me" butonunu tutup "Drop here" kutusunun ustune birakalim
         WebElement dragMe = driver.findElement(By.xpath("//*[@id='draggable']"));
         WebElement dropHere = driver.findElement(By.xpath("(//*[@id='droppable'])[1]"));
-        //Actions actions = new Actions(driver);
+        Actions actions = new Actions(driver);
         //Extends yaptığımız TestBase Class'da Actions clasını oluşturduğumuz için direk objeyi burda kullandık
         Thread.sleep(2000);
         actions.dragAndDrop(dragMe,dropHere).perform();

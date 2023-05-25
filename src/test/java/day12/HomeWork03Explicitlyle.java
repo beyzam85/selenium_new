@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.TestBaseBeforeAfter;
@@ -11,9 +12,11 @@ import utilities.TestBaseBeforeAfter;
 import java.time.Duration;
 
 public class HomeWork03Explicitlyle extends TestBaseBeforeAfter {
+    Actions actions = new Actions(driver);
 
     @Test
     public void test1() {
+
 
 
         //"Link 1" e tiklayin//1. "http://webdriveruniversity.com/Actions" sayfasina gidin

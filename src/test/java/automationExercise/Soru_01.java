@@ -1,17 +1,24 @@
 package automationExercise;
 
+import org.checkerframework.checker.units.qual.K;
+import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import utilities.TestBaseBeforeAfter;
+import utilities.TestBaseBeforeClassAfterClass;
 
-public class Soru_01 {
+public class Soru_01 extends TestBaseBeforeClassAfterClass {
 
-    public static void main(String[] args) throws InterruptedException {
+ //         public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "src/resources/drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+//        System.setProperty("webdriver.chrome.driver", "src/resources/drivers/chromedriver.exe");
+//        WebDriver driver = new ChromeDriver();
+//        driver.manage().window().maximize();
 
 
 //        //1.  Tarayıcıyı başlatın
@@ -111,13 +118,66 @@ public class Soru_01 {
          */
 
 
-    driver.get("http://automationexercise.com");
-    WebElement anaSayfaDogrulama = driver.findElement(By.xpath("//*[@alt='Website for automation practice']"));
+    @Test
+    public void test1() {
+        //2. 'http://automationexercise.com' url'sine gidin
+        driver.get("http://automationexercise.com");
+        //3.  Ana sayfanın başarıyla görünür olduğunu doğrulayın
+        WebElement anaSayfaDogrulama = driver.findElement(By.xpath("//*[@alt='Website for automation practice']"));
+        Assert.assertTrue(anaSayfaDogrulama.isDisplayed());
+    }
+    @Test
+    public void test2() {
+        //4. 'Kayıt Ol / Giriş Yap' düğmesine tıklayın
+        driver.findElement(By.xpath("//a[@href='/login']")).click();
+
+        //5. 'Yeni Kullanıcı Kaydı'nı doğrulayın! görünür
+        WebElement newUserSingUp = driver.findElement(By.xpath("(//div[@class='col-sm-4'])[1]"));
+        Assert.assertTrue(newUserSingUp.isDisplayed());
+
+        //6. Adı ve e-posta adresini girin
+        WebElement name = driver.findElement(By.xpath("//*[@data-qa='signup-name']"));
+        name.sendKeys("beyza");
+        WebElement emailAdress= driver.findElement(By.xpath("//*[@data-qa='signup-email']"));
+        emailAdress.sendKeys("beyza34@gmail.com");
+
+        //7. 'Kaydol' düğmesini tıklayın
+        driver.findElement(By.xpath("//*[@data-qa='signup-button']")).click();
+
+        //8. 'HESAP BİLGİLERİNİ GİRİN' ifadesinin görünür olduğunu doğrulayın
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@class='login-form']")).isDisplayed());
+
+        //9.  Doldurma ayrıntıları: Unvan, Ad, E-posta, Şifre, Doğum tarihi
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).
+                sendKeys("789654").sendKeys(Keys.TAB).
+                sendKeys("1").sendKeys(Keys.TAB).
+                sendKeys("January").sendKeys(Keys.TAB).
+                sendKeys("2000").sendKeys(Keys.TAB).
+                sendKeys(Keys.SPACE).sendKeys(Keys.TAB).sendKeys(Keys.SPACE).sendKeys(Keys.TAB).
+                sendKeys("Beyza").sendKeys(Keys.TAB).sendKeys("Amac").
+
+
+                perform();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
     }
-
-
 }
+
+
+
+
